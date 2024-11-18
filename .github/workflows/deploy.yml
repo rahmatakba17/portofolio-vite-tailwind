@@ -1,4 +1,4 @@
-name: Deploy Vite + Tailwind CSS project
+name: Deploy Vite + Tailwind CSS Project
 
 on:
   push:
@@ -11,10 +11,10 @@ jobs:
 
     steps:
       # Step 1: Checkout repository
-      - name: Checkout code
+      - name: Checkout repository
         uses: actions/checkout@v3
 
-      # Step 2: Setup Node.js environment
+      # Step 2: Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
@@ -24,8 +24,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      # Step 4: Build project
-      - name: Build project
+      # Step 4: Build the project
+      - name: Build the project
         run: npm run build
 
       # Step 5: Deploy to GitHub Pages
