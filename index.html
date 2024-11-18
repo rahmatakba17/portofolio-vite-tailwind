@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My portofolio</title>
+
+  <link rel="stylesheet" href="/src/styles.css" />
+  <link rel="stylesheet" href="/src/style-costum.css" />
+  <link rel="stylesheet" href="https://atugatran.github.io/FontAwesome6Pro/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+    rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap"
+    rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400&display=swap"
+  rel="stylesheet">
+</head>
+
+<body class="bg-gray-100 text-gray-800 layout">
+<!-- Decorative Circles -->
+<div class="circle top">
+  <i class="fa-solid fa-code"></i>
+</div>
+<div class="circle bottom">
+  <img src="src/asset/images/ojolx.png" alt="Logo" class="circle-logo" />
+</div>
+<!-- Sidebar -->
+<aside id="sidebar"
+  class="fixed top-0 left-0 h-full w-64 flex flex-col justify-center items-center py-8 z-10 shadow-lg">
+  <!-- Icon at the top left corner -->
+ 
+  <nav class="sidebar-menu flex flex-col space-y-8 w-full  items-center">
+    <a href="#home"
+      class="text-stone-950 py-8 hover:text-slate-50 sidebar-link transition duration-300 flex flex-col items-center">
+      <i title="home" class="fas fa-home fa-lg mb-1 animated-icon"></i>
+    </a>
+    <a href="#about"
+      class="text-stone-950 py-8 hover:text-slate-50 sidebar-link transition duration-300 flex flex-col items-center">
+      <i title="about" class="fas fa-user fa-lg mb-1 animated-icon"></i>
+    </a>
+    <a href="#portofolio"
+      class="text-stone-950 py-8 hover:text-slate-50 sidebar-link transition duration-300 flex flex-col items-center">
+      <i title="portfolio" class="fas fa-briefcase fa-lg mb-1 animated-icon"></i>
+    </a>
+    <a href="#contact"
+      class="text-stone-950 py-8 hover:text-slate-50 sidebar-link transition duration-300 flex flex-col items-center">
+      <i title="contact" class="fas fa-envelope fa-lg mb-1 animated-icon"></i>
+    </a>
+  </nav>
+</aside>
+
+<main class="content">
+  <!-- Home Section -->
+  <section id="home">
+    <!-- Blob SVG Background -->
+    <h2 class="text-top top-20 absolute right-0"> Jr Web Developer</h2>
+    <svg class="blob-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+      <path fill="#047857"
+        d="M39.8,-42.6C49.7,-29.9,54.5,-14.9,58.1,3.6C61.6,22,63.9,44.1,54,57.1C44.1,70.1,22,74.1,1,73.1C-20,72,-40,66,-47.1,53C-54.3,40,-48.6,20,-49,-0.5C-49.5,-20.9,-56.1,-41.8,-49,-54.6C-41.8,-67.3,-20.9,-71.9,-3,-68.9C14.9,-65.9,29.9,-55.4,39.8,-42.6Z"
+        transform="translate(100 100)" />
+    </svg>
+  
+    <!-- Gambar dan Konten Teks -->
+    <div class="text-center text-content">
+      <img src="src/asset/images/toonmecom_ef588d-removebg-preview.png" alt="Profile Image" class="profile-image">
+      <h2 class="typewriter-text" id="typewriter"></h2>
+      <p>A Web Developer passionate about creating modern and user-friendly websites.</p>
+    </div>
+  </section>
+  
+  <!-- About Section -->
+  <section id="about">
+    <h2 class="title">About Me</h2>
+    <div class="about-text">
+      <p class="intro-text">
+        As a dedicated freelance web developer, I am passionate about crafting innovative and high-quality websites. With
+        a
+        strong foundation in HTML, CSS, JavaScript, and popular frameworks, I have successfully completed a variety of
+        projects.
+        Beyond coding, I am committed to continuous learning and have actively participated in training programs offered
+        by
+        Kominfo, Dicoding, and other platforms. In my leisure time, I enjoy playing basketball, billiards, and football.
+      </p>
+  
+    </div>
+  
+    <!-- Icon Groups -->
+    <div class="icon-group">
+      <!-- Front-End Icon Container -->
+      <div class="icon-container" onclick="nextIcon(0)">
+        <h2>Front-End</h2>
+        <div class="icon-card active">
+          <i class="fab fa-html5"></i>
+          <p>HTML5</p>
+        </div>
+        <div class="icon-card">
+          <i class="fab fa-css3-alt"></i>
+          <p>CSS3</p>
+        </div>
+        <div class="icon-card">
+          <i class="fab fa-js"></i>
+          <p>JavaScript</p>
+        </div>
+      </div>
+  
+      <!-- Back-End Icon Container -->
+      <div class="icon-container" onclick="nextIcon(1)">
+        <h2>Back-End</h2>
+        <div class="icon-card active">
+          <i class="fab fa-node-js"></i>
+          <p>Node.js</p>
+        </div>
+        <div class="icon-card">
+          <i class="fas fa-database"></i>
+          <p>SQL</p>
+        </div>
+        <div class="icon-card">
+          <i class="fas fa-code"></i>
+          <p>PHP</p>
+        </div>
+      </div>
+  
+      <!-- Server Icon Container -->
+      <div class="icon-container" onclick="nextIcon(2)">
+        <h2>Server</h2>
+        <div class="icon-card active">
+          <i class="fas fa-server"></i>
+          <p>Apache</p>
+        </div>
+        <div class="icon-card">
+          <i class="fab fa-aws"></i>
+          <p>AWS</p>
+        </div>
+        <div class="icon-card">
+          <i class="fab fa-docker"></i>
+          <p>Docker</p>
+        </div>
+      </div>
+      <!-- Hoby Icon Container -->
+      <div class="icon-container" onclick="nextIcon(3)">
+        <h2>Hobbies</h2>
+        <div class="icon-card active">
+          <i class="fas fa-basketball"></i>
+          <p>BasketBall</p>
+        </div>
+        <div class="icon-card">
+          <i class="fas fa-futbol"></i>
+          <p>FootBall</p>
+        </div>
+        <div class="icon-card">
+          <i class="fas fa-table-tennis"></i>
+          <p>Table Tennis</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- portofolio Section -->
+  <section id="portofolio" class="py-20 bg-gray-100">
+    <h2 class="text-4xl font-bold text-center text-gray-800 mb-16">Our Activty</h2>
+    <div class="container mx-auto px-5">
+      <div class="portofolio-grid">
+        <div class="portofolio-item group">
+          <img src="/src/asset/images/portofolio/example.jpg" alt="Project 1" class="portofolio-img">
+          <div class="portofolio-overlay">
+            <div class="overlay-content">
+              <h3>Project 1</h3>
+              <p>Description for Project 1.</p>
+            </div>
+          </div>
+        </div>
+        <div class="portofolio-item group">
+          <img src="/src/asset/images/portofolio/example.jpg" alt="Project 2" class="portofolio-img">
+          <div class="portofolio-overlay">
+            <div class="overlay-content">
+              <h3>Project 2</h3>
+              <p>Description for Project 2.</p>
+            </div>
+          </div>
+        </div>
+        <div class="portofolio-item group">
+          <img src="/src/asset/images/portofolio/example.jpg" alt="Project 2" class="portofolio-img">
+          <div class="portofolio-overlay">
+            <div class="overlay-content">
+              <h3>Project 2</h3>
+              <p>Description for Project 2.</p>
+            </div>
+          </div>
+        </div>
+        <div class="portofolio-item group">
+          <img src="/src/asset/images/portofolio/example.jpg" alt="Project 2" class="portofolio-img">
+          <div class="portofolio-overlay">
+            <div class="overlay-content">
+              <h3>Project 2</h3>
+              <p>Description for Project 2.</p>
+            </div>
+          </div>
+        </div>
+        <div class="portofolio-item group">
+          <img src="/src/asset/images/portofolio/example.jpg" alt="Project 2" class="portofolio-img">
+          <div class="portofolio-overlay">
+            <div class="overlay-content">
+              <h3>Project 2</h3>
+              <p>Description for Project 2.</p>
+            </div>
+          </div>
+        </div>
+        <div class="portofolio-item group">
+          <img src="/src/asset/images/portofolio/example.jpg" alt="Project 2" class="portofolio-img">
+          <div class="portofolio-overlay">
+            <div class="overlay-content">
+              <h3>Project 2</h3>
+              <p>Description for Project 2.</p>
+            </div>
+          </div>
+        </div>
+        <div class="portofolio-item group">
+          <img src="/src/asset/images/portofolio/example.jpg" alt="Project 2" class="portofolio-img">
+          <div class="portofolio-overlay">
+            <div class="overlay-content">
+              <h3>Project 2</h3>
+              <p>Description for Project 2.</p>
+            </div>
+          </div>
+        </div>
+        <div class="portofolio-item group">
+          <img src="/src/asset/images/portofolio/example.jpg" alt="Project 2" class="portofolio-img">
+          <div class="portofolio-overlay">
+            <div class="overlay-content">
+              <h3>Project 2</h3>
+              <p>Description for Project 2.</p>
+            </div>
+          </div>
+        </div>
+        <div class="portofolio-item group">
+          <img src="/src/asset/images/portofolio/example.jpg" alt="Project 2" class="portofolio-img">
+          <div class="portofolio-overlay">
+            <div class="overlay-content">
+              <h3>Project 2</h3>
+              <p>Description for Project 2.</p>
+            </div>
+          </div>
+        </div>
+        <div class="portofolio-item group">
+          <img src="/src/asset/images/portofolio/example.jpg" alt="Project 2" class="portofolio-img">
+          <div class="portofolio-overlay">
+            <div class="overlay-content">
+              <h3>Project 2</h3>
+              <p>Description for Project 2.</p>
+            </div>
+          </div>
+        </div>
+        <div class="portofolio-item group">
+          <img src="/src/asset/images/portofolio/example.jpg" alt="Project 2" class="portofolio-img">
+          <div class="portofolio-overlay">
+            <div class="overlay-content">
+              <h3>Project 2</h3>
+              <p>Description for Project 2.</p>
+            </div>
+          </div>
+        </div>
+        <div class="portofolio-item group">
+          <img src="/src/asset/images/portofolio/example.jpg" alt="Project 2" class="portofolio-img">
+          <div class="portofolio-overlay">
+            <div class="overlay-content">
+              <h3>Project 2</h3>
+              <p>Description for Project 2.</p>
+            </div>
+          </div>
+        </div>
+        <!-- Tambahkan lebih banyak item sesuai kebutuhan -->
+      </div>
+    </div>
+  </section>
+  
+  <!-- Contact Section -->
+  <section id="contact" class="relative py-20 px-5">
+    <h2 class="text-3xl font-bold text-center mb-16 text-white">Get in Touch</h2>
+  
+    <!-- Kontainer utama untuk form dan ikon -->
+    <div class="max-w-4xl mx-auto flex flex-wrap justify-between items-start space-y-8 md:space-y-0">
+  
+      <!-- Form Kontak (Sebelah Kiri) -->
+      <div class="glass-form w-full md:w-1/2 p-8 rounded-lg shadow-lg">
+        <form id="contactForm" class="space-y-6">
+          <div class="relative">
+            <input type="text" id="name" class="glass-input" placeholder=" " required>
+            <label for="name" class="floating-label">Name</label>
+          </div>
+          <div class="relative">
+            <input type="email" id="email" class="glass-input" placeholder=" " required>
+            <label for="email" class="floating-label">Email</label>
+          </div>
+          <div class="relative">
+            <textarea id="message" class="glass-input" placeholder=" " rows="4" required></textarea>
+            <label for="message" class="floating-label">Message</label>
+          </div>
+          <button type="button" id="sendMessage" class="glass-btn">Send Message</button>
+        </form>
+      </div>
+  
+      <!-- Contact Section - Social Media Icons -->
+      <div class="w-full md:w-1/3 flex flex-col items-center md:items-start text-white">
+        <h3 class="text-2xl font-semibold mb-6">Follow Us</h3>
+  
+        <!-- Social Media Icons in Responsive Grid -->
+        <div class="social-media-grid grid grid-cols-5 gap-4 w-full md:max-w-xs lg:max-w-sm">
+          <a href="#" target="_blank" class="social-title fb">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#" target="_blank" class="social-title tw">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#" target="_blank" class="social-title ig">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/rahmat-hidayat-45702a1bb/" target="_blank" class="social-title ln">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="#" target="_blank" class="social-title bg-blue-500">
+            <i class="fab fa-telegram"></i>
+          </a>
+          <a href="#" target="_blank" class="social-title bg-black">
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a href="https://github.com/rahmatakba17" target="_blank" class="social-title bg-black">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="#" target="_blank" class="social-title bg-red-600">
+            <i class="fab fa-pinterest"></i>
+          </a>
+          <a href="#" target="_blank" class="social-title yt">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="#" target="_blank" class="social-title bg-black">
+            <i class="fab fa-discord"></i>
+          </a>
+          <!-- Tambahkan lebih banyak ikon jika diperlukan -->
+        </div>
+      </div>
+    </div>
+    </div>
+  </section>
+</main>
+ 
+
+  <script type="module" src="/src/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll(".sidebar-link");
+
+        function setActiveLink() {
+          let index = sections.length;
+
+          while (--index && window.scrollY + 100 < sections[index].offsetTop) { }
+
+          navLinks.forEach((link) => link.classList.remove("active"));
+          navLinks[index].classList.add("active");
+        }
+
+        setActiveLink();
+        window.addEventListener("scroll", setActiveLink);
+      });
+
+  document.getElementById("sendMessage").addEventListener("click", function () {
+    // Mengambil nilai input
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    // Nomor telepon tujuan
+    const phoneNumber = "081935707406"; // Ganti dengan nomor WhatsApp tujuan
+
+    // Membuat URL WhatsApp
+    const whatsappURL = `https://wa.me/${phoneNumber}?text=` +
+      encodeURIComponent(`Hello, my name is ${name}. Here is my message:\n\n${message}\n\nYou can contact me at ${email}.`);
+
+    // Mengarahkan ke WhatsApp
+    window.open(whatsappURL, "_blank");
+  });
+  </script>
+</body>
+
+</html>

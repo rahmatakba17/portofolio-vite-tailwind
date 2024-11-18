@@ -1,0 +1,776 @@
+.layout {
+    display: flex;
+}
+
+.content {
+    margin-left: 9rem;
+    /* Matches the sidebar width */
+    flex-grow: 1;
+    /* Allow the content to fill the remaining space */
+    /* padding: 2rem; */
+    background-color: #f9f9f9;
+    min-height: 100vh;
+    box-sizing: border-box;
+    background-image: linear-gradient(to right top, #051937, #003150, #00495f, #006160, #047857);
+    /* Gradien content */
+}
+
+#sidebar {
+    background-image: linear-gradient(to right top, #051937, #003150, #00495f, #006160, #047857);
+    background-size: 200% 200%;
+    animation: gradient-animation 6s ease infinite;
+    width: 7.1rem;
+    /* Lebar lebih kecil */
+    height: 60%;
+    position: fixed;
+    top: 20%;
+    left: 1rem;
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    border-radius: 19rem;
+    /* Membuat bentuk lebih menarik */
+    opacity: 0.95;
+    /* Transparan agar tidak menutupi */
+    transition: width 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-menu a {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    /* Warna teks/icon */
+    transition: color 0.3s ease;
+}
+
+/* Pseudo-element sebagai latar belakang */
+.sidebar-menu a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 3.5rem;
+    /* Lebar latar */
+    height: 3.5rem;
+    /* Tinggi latar */
+    /* background-color: #52034e; */
+    /* Warna latar */
+    border-radius: 20%;
+    /* Membuat lingkaran */
+    z-index: -1;
+    /* Latar belakang di bawah teks/icon */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sidebar-menu a:hover::before {
+    background-color: #047857;
+    /* Warna latar saat hover */
+    transform: translate(-50%, -50%) scale(1.1);
+    /* Efek zoom saat hover */
+}
+
+.sidebar-menu i {
+    font-size: 1.5rem;
+    /* Ukuran ikon */
+    transition: transform 0.3s ease;
+}
+
+.sidebar-menu a:hover i {
+    transform: translateY(-2px);
+    /* Ikon bergerak saat hover */
+}
+
+.sidebar-menu i {
+    font-size: 1.8rem;
+    /* Default icon size */
+}
+
+/* Circle Styling */
+.circle {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background-color: #047857;
+    /* Warna lingkaran */
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.5rem;
+    z-index: 2;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Circle Above Sidebar */
+.circle.top {
+    top: 2rem;
+    position: fixed;
+    /* Adjust position above the sidebar */
+    left: calc(4.5rem - 40px);
+    /* Center circle horizontally on sidebar */
+}
+
+/* Logo in Circle Bottom */
+.circle-logo {
+    width: 60%;
+    /* Adjust logo size */
+    height: 60%;
+    object-fit: contain;
+    border-radius: 50%;
+    /* Optional: Makes the logo circular inside the circle */
+}
+
+/* Circle Below Sidebar */
+.circle.bottom {
+    bottom: 2rem;
+    position: fixed;
+    /* Adjust position below the sidebar */
+    left: calc(4.5rem - 40px);
+    /* Center circle horizontally on sidebar */
+}
+
+.home {
+    background-color: #e5e5f7;
+    opacity: 0.7;
+    background-image: linear-gradient(to right top, #051937, #003150, #00495f, #006160, #047857);
+    background-position: 4px 0, 4px 0, 0 0, 0 0;
+    background-size: 4px 4px;
+    background-repeat: repeat;
+}
+
+.name {
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Styling untuk section */
+#home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f3f4f6;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Styling untuk blob SVG */
+.blob-svg {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    animation: blobAnimation 6s infinite ease-in-out;
+    z-index: 0;
+}
+
+/* Styling gambar */
+.profile-image {
+    position: relative;
+    z-index: 1;
+    width: 350px;
+    height: 350px;
+    left: 20%;
+    /* border-radius: 50%; */
+    object-fit: cover;
+    /* box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); */
+    transition: transform 0.5s ease;
+}
+
+/* Efek Hover pada gambar dengan animasi berulang */
+.profile-image {
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-image:hover {
+    animation: hoverAnimation 3s infinite ease-in-out;
+}
+
+/* Animasi gerakan berulang pada gambar */
+@keyframes hoverAnimation {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    25% {
+        transform: scale(1.05) rotate(3deg);
+    }
+
+    50% {
+        transform: scale(1.1) rotate(0deg);
+    }
+
+    75% {
+        transform: scale(1.05) rotate(-3deg);
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+
+/* Styling teks dan judul */
+.text-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    max-width: 500px;
+    margin-top: 20px;
+}
+
+/* Efek Typewriter dan multi-warna */
+.typewriter-text {
+    font-size: 2.5rem;
+    font-weight: 700;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 3px solid #333;
+    animation: blink 0.75s step-end infinite, multiColor 5s infinite;
+}
+
+/* Animasi Typewriter */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Animasi multi-warna */
+@keyframes multiColor {
+    0% {
+        color: #f59e0b;
+    }
+
+    25% {
+        color: #FF4500;
+    }
+
+    50% {
+        color: #FFD700;
+    }
+
+    75% {
+        color: #2e5aeb;
+    }
+
+    100% {
+        color: #1E90FF;
+    }
+}
+
+.text-content p {
+    margin-top: 0.5rem;
+    font-size: 2.2rem;
+    color: #555;
+}
+
+/* Styling About Section */
+#about {
+    padding: 60px 20px;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+#about>.title {
+    font-size: 2.5rem;
+    color: #f59e0b;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #4f46e5;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.about-text {
+    max-width: 100%;
+    margin: 0 auto;
+    font-size: 1.25rem;
+    color: #374151;
+    margin-bottom: 40px;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    font-size: 1.2rem;
+    line-height: 1.8;
+    text-align: justify;
+    position: relative;
+    border-left: 4px solid #56555a;
+}
+
+.intro-text:hover {
+    color: #f59e0b;
+    transition: ease-in 1s;
+}
+
+/* Styling and animation for the first letter */
+.intro-text::first-letter {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: bold;
+    color: #56555a;
+    float: left;
+    line-height: 0.9;
+    margin-right: 10px;
+    padding-right: 4px;
+    animation: first-letter-animate 1.2s ease-in-out;
+    transform-origin: center;
+}
+
+/* Animation for the first letter */
+@keyframes first-letter-animate {
+    0% {
+        transform: scale(0) rotate(-45deg);
+        opacity: 0;
+    }
+
+    50% {
+        transform: scale(1.2) rotate(10deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+.icon-group {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.icon-container {
+    position: relative;
+    width: 150px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.icon-container h2 {
+    margin: 0;
+    font-size: 1.2rem;
+    color: #4f46e5;
+    text-align: center;
+}
+
+.icon-card {
+    width: 100%;
+    height: 150px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 30px;
+    /* Offset to position below the heading */
+    transition: opacity 0.5s ease;
+    opacity: 0;
+}
+
+.icon-card.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.icon-card i {
+    font-size: 3rem;
+    color: #4f46e5;
+}
+
+.icon-card p {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* Section portofolio */
+#portofolio {
+    background-color: #f7f7f7;
+    height: 100vh;
+}
+
+/* Portfolio Grid */
+.portofolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 0.5rem;
+    width: 100%;
+    /* Memastikan grid mengisi penuh lebar container */
+}
+
+/* Portfolio Item */
+.portofolio-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+
+.portofolio-item:hover {
+    transform: scale(1.05) translateY(-10px);
+    z-index: 10;
+    grid-column: span 2;
+    /* Membuat item membesar menjadi dua kolom */
+    grid-row: span 2;
+    /* Membuat item membesar menjadi dua baris */
+}
+
+/* Portfolio Image */
+.portofolio-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.5s ease;
+}
+
+.portofolio-item:hover .portofolio-img {
+    opacity: 0.8;
+    /* Sedikit gelapkan gambar saat hover */
+}
+
+/* Overlay */
+.portofolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.portofolio-item:hover .portofolio-overlay {
+    opacity: 1;
+}
+
+/* Overlay Content */
+.overlay-content {
+    text-align: center;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.portofolio-item:hover .overlay-content {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.overlay-content h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.overlay-content p {
+    font-size: 0.9rem;
+    opacity: 0.9;
+}
+
+/* Background animation */
+#contact {
+    background-image: linear-gradient(to right top, #051937, #003150, #00495f, #006160, #047857);
+    background-size: 200% 200%;
+    animation: gradient-animation 6s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Glass Effect */
+.glass-form {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Input Styles */
+.glass-input {
+    width: 100%;
+    padding: 12px 16px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #fff;
+    border-radius: 5px;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.4s ease;
+}
+
+.glass-input:focus {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #fff;
+}
+
+/* Floating Label */
+.floating-label {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: 0.3s ease;
+}
+
+.glass-input:not(:placeholder-shown)+.floating-label,
+.glass-input:focus+.floating-label {
+    top: -0.6rem;
+    left: 10px;
+    font-size: 0.85rem;
+    color: #fff;
+}
+
+/* Button Styles */
+.glass-btn {
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(145deg, #b94894, #b11b77);
+    color: #fff;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(252, 108, 133, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(252, 108, 133, 0.6);
+}
+
+/* Contact Section Styles */
+.glass-form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Background Animation */
+.animated-background {
+    background: linear-gradient(120deg, #ff0080, #ff8c00, #ff00ff);
+    background-size: 300% 300%;
+    animation: bgAnimation 10s ease infinite;
+}
+
+/* Gradien Animation Keyframes */
+@keyframes bgAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Background Gradient Animation */
+.animated-background {
+    background: radial-gradient(circle, rgba(255, 136, 136, 0.4), rgba(255, 205, 0, 0.4), rgba(20, 20, 60, 0.9));
+    background-size: 400% 400%;
+    animation: moveGradient 10s ease infinite;
+}
+
+/* Social Tile Base Styles */
+.social-title {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 60px;
+    font-size: 1.8rem;
+    color: white;
+    border-radius: 80%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Specific Background Gradients for Each Icon */
+.fb {
+    background: linear-gradient(45deg, #3b5998, #8b9dc3);
+}
+
+.tw {
+    background: linear-gradient(45deg, #00acee, #88c5f7);
+}
+
+.ig {
+    background: linear-gradient(45deg, #e1306c, #f7a1c4);
+}
+
+.ln {
+    background: linear-gradient(45deg, #0077b5, #56a3d8);
+}
+
+.yt {
+    background: linear-gradient(45deg, #FF0000, #FF6347);
+}
+
+/* Animation Effects on Hover */
+.social-title:hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive Grid Layout for Social Media Icons */
+.social-media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    gap: 1rem;
+}
+
+/* Responsive Sidebar */
+@media (max-width: 1024px) {
+    #sidebar {
+        width: 12rem;
+        height: 50%;
+        /* Slightly smaller height to fit medium screens */
+        top: 5%;
+        /* Ensure it's positioned correctly */
+        transform: translateY(0);
+        /* Remove centering as it is manually adjusted */
+        border-top-left-radius: 2rem;
+        border-bottom-left-radius: 2rem;
+        background: rgba(48, 11, 117, 0.7);
+        /* Transparent background for medium screens */
+    }
+
+    .icontop {
+        left: 5rem !important;
+    }
+
+    .sidebar-menu a {
+        font-size: 1.3rem;
+    }
+
+    .sidebar-menu i {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    #sidebar {
+        width: 6rem;
+        height: 60%;
+        top: 20%;
+        left: 1.55rem;
+        border-radius: 10rem;
+        background-image: linear-gradient(to right top, #003150, #00495f, #006160, #007970, #047857);
+    }
+
+    .circle {
+        width: 60px;
+        height: 60px;
+        font-size: 1.2rem;
+        left: calc(3.5rem - 30px);
+    }
+
+    .circle.top {
+        top: 1rem;
+        left: 2.5rem;
+    }
+
+    .circle.bottom {
+        bottom: 1rem;
+        left: 2.5rem;
+    }
+
+    .sidebar-menu a {
+        font-size: 1.1rem;
+    }
+
+    .sidebar-menu i {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #sidebar {
+        width: 4.5rem;
+        height: 40%;
+        top: 5%;
+        left: 0.5rem;
+        border-radius: 8rem;
+        background-image: linear-gradient(to right top, #00495f, #006160, #007970, #009184, #047857);
+    }
+
+    .circle {
+        width: 50px;
+        height: 50px;
+        font-size: 1rem;
+        left: calc(2.75rem - 25px);
+    }
+
+    .circle.top {
+        top: 0.5rem;
+    }
+
+    .circle.bottom {
+        bottom: 0.5rem;
+    }
+
+    .sidebar-menu a {
+        font-size: 1rem;
+    }
+
+    .sidebar-menu i {
+        font-size: 1rem;
+    }
+}
